@@ -36,3 +36,9 @@ class Searcher:
             self.search_image()
             print(self.string)
         self.current_letter += 1
+
+    def write_result(self):
+        """Writes the final result to the output file"""
+        with open(self.output_file, 'w') as f:
+            f.write(self.string)
+    
