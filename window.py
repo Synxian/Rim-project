@@ -55,4 +55,5 @@ searcher=Searcher()
 os.makedirs('inputs', exist_ok=True)
 
 window.mainloop()
+searcher.save_output()
 shutil.rmtree('inputs')
