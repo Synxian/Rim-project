@@ -44,7 +44,7 @@ class Searcher:
         current_result = ('', numpy.Inf)
         for folder, _ in self.knn:
             matriz_distancias = scipy.spatial.distance.cdist(
-                [self.current_descriptor], self.small_descriptors[folder], metric='euclidean'
+                [self.current_descriptor], self.small_descriptors[folder], metric='cityblock'
             )
             min_idx = numpy.argmin(matriz_distancias)
             if current_result[1] > matriz_distancias[0][min_idx]:
