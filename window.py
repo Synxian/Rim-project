@@ -2,6 +2,7 @@ import tkinter
 import os
 from PIL import ImageGrab
 from search import Searcher
+import shutil
 
 window = tkinter.Tk()
 
@@ -39,7 +40,7 @@ def save_image(widget):
         y1=y+widget.winfo_height()
         image = ImageGrab.grab().crop((x,y,x1,y1))
         image.resize((32, 32)).save(f'inputs/letter_{IT}.jpg')
-    # searcher.add_letter()
+    searcher.add_letter()
     IT = IT+1
 
 # Binds left click and mouse motion to draw in canvas
@@ -52,3 +53,4 @@ searcher=Searcher()
 os.makedirs('inputs', exist_ok=True)
 
 window.mainloop()
+shutil.rmtree('inputs')
