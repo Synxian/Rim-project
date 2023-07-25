@@ -28,14 +28,14 @@ def indexar(directory, dir_datos_temporales):
 
 dir_dataset_r = 'dataset'
 
-# # Create a directory with a subset of the dataset
-# os.makedirs('dataset_small', exist_ok=True)
-# for directory in os.listdir(dir_dataset_r):
-#     os.makedirs(f'dataset_small/{directory}', exist_ok=True)
-#     cantidad = len(os.listdir(f'{dir_dataset_r}/{directory}')) // 50
-#     for i, file in enumerate(os.listdir(f'{dir_dataset_r}/{directory}')):
-#         if i % cantidad == 0:
-#             shutil.copy(f'{dir_dataset_r}/{directory}/{file}', f'dataset_small/{directory}/{file}')
+# Create a directory with a subset of the dataset
+os.makedirs('dataset_small', exist_ok=True)
+for directory in os.listdir(dir_dataset_r):
+    os.makedirs(f'dataset_small/{directory}', exist_ok=True)
+    cantidad = len(os.listdir(f'{dir_dataset_r}/{directory}')) // 100
+    for i, file in enumerate(os.listdir(f'{dir_dataset_r}/{directory}')):
+        if i % cantidad == 0:
+            shutil.copy(f'{dir_dataset_r}/{directory}/{file}', f'dataset_small/{directory}/{file}')
 
 # Create a directory called descriptors_small and index the images in dataset_small
 os.makedirs('descriptors_small', exist_ok=True)
@@ -45,13 +45,13 @@ for directory in os.listdir('dataset_small'):
 
 
 
-# os.makedirs('micro_dataset', exist_ok=True)
-# for directory in os.listdir(dir_dataset_r):
-#     os.makedirs(f'micro_dataset/{directory}', exist_ok=True)
-#     cantidad = len(os.listdir(f'{dir_dataset_r}/{directory}')) // 10
-#     for i, file in enumerate(os.listdir(f'{dir_dataset_r}/{directory}')):
-#         if i % cantidad == 0:
-#             shutil.copy(f'{dir_dataset_r}/{directory}/{file}', f'micro_dataset/{directory}/{file}')
+os.makedirs('micro_dataset', exist_ok=True)
+for directory in os.listdir(dir_dataset_r):
+    os.makedirs(f'micro_dataset/{directory}', exist_ok=True)
+    cantidad = len(os.listdir(f'{dir_dataset_r}/{directory}')) // 15
+    for i, file in enumerate(os.listdir(f'{dir_dataset_r}/{directory}')):
+        if i % cantidad == 0:
+            shutil.copy(f'{dir_dataset_r}/{directory}/{file}', f'micro_dataset/{directory}/{file}')
 
 
 os.makedirs('descriptors_micro', exist_ok=True)
