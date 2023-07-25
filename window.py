@@ -33,6 +33,7 @@ def save_image(widget):
     """Save canvas as an image, the name will be 'letter_n.jpg', where n is the current iteration,
     starting from 0"""
     global IT
+    space = True
     if not canvas.find_all()==():
         x=window.winfo_rootx()+widget.winfo_x()
         y=window.winfo_rooty()+widget.winfo_y()
@@ -40,7 +41,8 @@ def save_image(widget):
         y1=y+widget.winfo_height()
         image = ImageGrab.grab().crop((x,y,x1,y1))
         image.resize((32, 32)).save(f'inputs/letter_{IT}.jpg')
-    searcher.add_letter()
+        space=False
+    searcher.add_letter(space)
     IT = IT+1
 
 # Binds left click and mouse motion to draw in canvas
