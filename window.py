@@ -6,7 +6,7 @@ import shutil
 
 window = tkinter.Tk()
 
-window.geometry('300x300')
+window.geometry('256x256')
 canvas = tkinter.Canvas(window, bg='black', highlightthickness=0)
 
 IT = 0
@@ -19,7 +19,7 @@ def canvas_coordintaes(event):
 def draw(event):
     """Draw a line based on a given event"""
     global x_axis, y_axis
-    canvas.create_line((x_axis, y_axis, event.x, event.y), fill='white', width=18, smooth=True, splinesteps=32, capstyle='round', joinstyle='round')
+    canvas.create_line((x_axis, y_axis, event.x, event.y), fill='white', width=24, smooth=True, splinesteps=32, capstyle='round', joinstyle='round')
     x_axis, y_axis = event.x, event.y
 
 # Save canvas as an image, then clear its content
@@ -55,4 +55,5 @@ searcher=Searcher()
 os.makedirs('inputs', exist_ok=True)
 
 window.mainloop()
+searcher.save_output()
 shutil.rmtree('inputs')
