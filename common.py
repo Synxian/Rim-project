@@ -27,8 +27,8 @@ def angulos_en_zona(imgBordes, imgSobelX, imgSobelY):
 def angulos_por_zona(archivo_imagen):
     # divisiones
     num_zonas_x = 8
-    num_zonas_y = 8 
-    num_bins_por_zona = 9
+    num_zonas_y = 8
+    num_bins_por_zona = 4
     threshold_magnitud_gradiente = 50
     # leer imagen
     imagen = cv2.imread(archivo_imagen, cv2.IMREAD_GRAYSCALE)
