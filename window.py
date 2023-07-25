@@ -19,7 +19,7 @@ def canvas_coordintaes(event):
 def draw(event):
     """Draw a line based on a given event"""
     global x_axis, y_axis
-    canvas.create_line((x_axis, y_axis, event.x, event.y), fill='white', width=25, smooth=True, splinesteps=50)
+    canvas.create_line((x_axis, y_axis, event.x, event.y), fill='white', width=18, smooth=True, splinesteps=32, capstyle='round', joinstyle='round')
     x_axis, y_axis = event.x, event.y
 
 # Save canvas as an image, then clear its content
