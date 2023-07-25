@@ -7,6 +7,7 @@ import os.path
 import cv2
 import scipy.spatial
 import numpy
+from common import vector_de_intensidades
 
 
 def tarea1_buscar(dir_dataset_q, dir_datos_temporales, file_resultados):
